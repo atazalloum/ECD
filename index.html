@@ -316,6 +316,29 @@
             font-size: 15px;
         }
 
+        .hero-logo-wide {
+            width: 100%;
+            max-width: 620px;
+            height: auto;
+            object-fit: contain;
+            margin: 0 0 22px;
+            border-radius: 18px;
+        }
+
+        @media (max-width: 699px) {
+            .hero-logo-wide {
+                max-width: 100%;
+                margin-bottom: 18px;
+            }
+        }
+
+        @media (min-width: 980px) {
+            .hero-logo-wide {
+                max-width: 620px;
+                margin-bottom: 24px;
+            }
+        }
+
         .hero-actions {
             display: flex;
             flex-wrap: wrap;
@@ -541,7 +564,7 @@
         }
 
         .service-card img {
-            height: 215px;
+            height: 245px;
 
             object-fit: cover;
         }
@@ -1348,6 +1371,8 @@
 
                 <div class="hero-copy">
 
+                    <img class="hero-logo-wide" src="mainepro.png" alt="Express Car Detailing - Inside & Out">
+
                     <div class="eyebrow" data-en="Professional Car Detailing · Kilkenny"
                         data-ga="Mionsonrú Gairmiúil Carranna · Cill Chainnigh">
                         Professional Car Detailing · Kilkenny
@@ -1429,11 +1454,9 @@
 
                 <div class="hero-image">
 
-                    <img src="maine.png"
-                        alt="Black car being professionally ">
+                    <img src="maine.png" alt="Black car being professionally ">
 
-                    <div class="hero-badge" data-en="INSIDE & OUT · KILKENNY"
-                        data-ga="ISTIGH & AMUIGH · CILL CHAINNIGH">
+                    <div class="hero-badge" data-en="INSIDE & OUT " data-ga="ISTIGH & AMUIGH · CILL CHAINNIGH">
                         INSIDE & OUT · KILKENNY
                     </div>
 
@@ -1444,158 +1467,6 @@
 
         </section>
 
-
-
-        <!-- ======================================================
-     SERVICES
-====================================================== -->
-
-        <section class="section" id="services">
-
-            <div class="container">
-
-
-                <div class="section-head">
-
-                    <div>
-
-                        <div class="section-kicker" data-en="What We Do" data-ga="Cad a Dhéanaimid">
-                            What We Do
-                        </div>
-
-                        <h2 data-en="Our Services" data-ga="Ár Seirbhísí">
-                            Our Services
-                        </h2>
-
-                    </div>
-
-
-                    <p class="section-intro"
-                        data-en="Professional vehicle care, presented simply. Choose a service and contact us for the details that apply to your vehicle."
-                        data-ga="Cúram gairmiúil feithicle, curtha i láthair go soiléir. Roghnaigh seirbhís agus déan teagmháil linn chun na sonraí do d'fheithicil a fháil.">
-
-                        Professional vehicle care, presented simply.
-                        Choose a service and contact us for the details that apply to your vehicle.
-
-                    </p>
-
-                </div>
-
-
-
-                <div class="services-grid">
-
-
-
-                    <!-- SERVICE 3 -->
-
-                    <article class="service-card">
-
-                        <img src="Ceramic Pro.jpg" alt="Ceramic Pro car care">
-
-                        <div class="service-body">
-
-                            <div class="service-number">
-
-                            </div>
-
-                            <h3 data-en="Ceramic Pro" data-ga="Cosaint Cheirmeach">
-                                Ceramic Pro
-                            </h3>
-
-                            <button class="btn btn-secondary info-btn" type="button" data-service="ceramic"
-                                data-en="INFO" data-ga="EOLAS">
-                                INFO
-                            </button>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- SERVICE 4 -->
-
-                    <article class="service-card">
-
-                        <img src="Full Valet.webp" alt="Full valet car detailing">
-
-                        <div class="service-body">
-
-                            <div class="service-number">
-
-                            </div>
-
-                            <h3 data-en="Full Valet" data-ga="Valet Iomlán">
-                                Full Valet
-                            </h3>
-
-                            <button class="btn btn-secondary info-btn" type="button" data-service="valet" data-en="INFO"
-                                data-ga="EOLAS">
-                                INFO
-                            </button>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <article class="service-card">
-
-                        <img src="Full Car Service.webp"
-                            alt="Full car service">
-
-                        <div class="service-body">
-
-                            <div class="service-number">
-
-                            </div>
-
-                            <h3 data-en="Full Car Service" data-ga="Seirbhís Iomlán Carranna">
-                                Full Car Service
-                            </h3>
-
-                            <button class="btn btn-secondary info-btn" type="button" data-service="full" data-en="INFO"
-                                data-ga="EOLAS">
-                                INFO
-                            </button>
-
-                        </div>
-
-                    </article>
-
-
-
-
-                    <article class="service-card">
-
-                        <img src="Additional Services.png"
-                            alt="Additional car care service">
-
-                        <div class="service-body">
-
-                            <div class="service-number">
-
-                            </div>
-
-                            <h3 data-en="Additional Services" data-ga="Seirbhísí Breise">
-                                Additional Services
-                            </h3>
-
-                            <button class="btn btn-secondary info-btn" type="button" data-service="additional"
-                                data-en="INFO" data-ga="EOLAS">
-                                INFO
-                            </button>
-
-                        </div>
-
-                    </article>
-                </div>
-
-            </div>
-
-        </section>
 
 
 
@@ -1627,14 +1498,6 @@
                         At Express Car Detailing, we believe every vehicle deserves professional care.
                         From a fresh exterior finish to a detailed interior, we focus on quality,
                         attention to detail, and a clean result you can see and feel.
-
-                    </p>
-
-
-                    <p class="about-closing" data-en="Inside & Out — your car, properly cared for."
-                        data-ga="Istigh & Amuigh — do charr faoi chúram ceart.">
-
-                        Inside & Out — your car, properly cared for.
 
                     </p>
 
@@ -1684,6 +1547,198 @@
 
 
         <!-- ======================================================
+     SERVICES
+====================================================== -->
+
+        <section class="section" id="services">
+
+            <div class="container">
+
+
+                <div class="section-head">
+
+                    <div>
+
+                        <div class="section-kicker" data-en="What We Do" data-ga="Cad a Dhéanaimid">
+                            What We Do
+                        </div>
+
+                        <h2 data-en="Our Services" data-ga="Ár Seirbhísí">
+                            Our Services
+                        </h2>
+
+                    </div>
+
+
+                    <p class="section-intro"
+                        data-en="Professional vehicle care, presented simply. Choose a service and contact us for the details that apply to your vehicle."
+                        data-ga="Cúram gairmiúil feithicle, curtha i láthair go soiléir. Roghnaigh seirbhís agus déan teagmháil linn chun na sonraí do d'fheithicil a fháil.">
+
+                        Professional vehicle care, presented simply.
+                        Choose a service and contact us for the details that apply to your vehicle.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="services-grid">
+
+
+
+                    <article class="service-card">
+
+                        <img src="silver.jpg" alt="Silver">
+
+                        <div class="service-body">
+
+                            <div class="service-number">
+
+                            </div>
+
+                            <h3 data-en="Silver" data-ga="Silver">
+                                Silver
+                            </h3>
+
+                            <button class="btn btn-secondary info-btn" type="button" data-service="Silver"
+                                data-en="INFO" data-ga="EOLAS">
+                                INFO
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="service-card">
+
+                        <img src="GOLD.jpg" alt="GOLD">
+
+                        <div class="service-body">
+
+                            <div class="service-number">
+
+                            </div>
+
+                            <h3 data-en="GOLD" data-ga="GOLD">
+                                GOLD
+                            </h3>
+
+                            <button class="btn btn-secondary info-btn" type="button" data-service="GOLD" data-en="INFO"
+                                data-ga="EOLAS">
+                                INFO
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="service-card">
+
+                        <img src="Full Valet.webp" alt="Full valet car detailing">
+
+                        <div class="service-body">
+
+                            <div class="service-number">
+
+                            </div>
+
+                            <h3 data-en="Full Valet" data-ga="Valet Iomlán">
+                                Full Valet
+                            </h3>
+
+                            <button class="btn btn-secondary info-btn" type="button" data-service="valet" data-en="INFO"
+                                data-ga="EOLAS">
+                                INFO
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    <article class="service-card">
+
+                        <img src="Ceramic Pro.jpg" alt="Ceramic Pro car care">
+
+                        <div class="service-body">
+
+                            <div class="service-number">
+
+                            </div>
+
+                            <h3 data-en="Ceramic Pro" data-ga="Cosaint Cheirmeach">
+                                Ceramic Pro
+                            </h3>
+
+                            <button class="btn btn-secondary info-btn" type="button" data-service="ceramic"
+                                data-en="INFO" data-ga="EOLAS">
+                                INFO
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="service-card">
+
+                        <img src="Full Car Service.webp" alt="Full car service">
+
+                        <div class="service-body">
+
+                            <div class="service-number">
+
+                            </div>
+
+                            <h3 data-en="Full Car Service" data-ga="Seirbhís Iomlán Carranna">
+                                Full Car Service
+                            </h3>
+
+                            <button class="btn btn-secondary info-btn" type="button" data-service="full" data-en="INFO"
+                                data-ga="EOLAS">
+                                INFO
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+
+
+                    <article class="service-card">
+
+                        <img src="Additional Services.png" alt="Additional car care service">
+
+                        <div class="service-body">
+
+                            <div class="service-number">
+
+                            </div>
+
+                            <h3 data-en="Additional Services" data-ga="Seirbhísí Breise">
+                                Additional Services
+                            </h3>
+
+                            <button class="btn btn-secondary info-btn" type="button" data-service="additional"
+                                data-en="INFO" data-ga="EOLAS">
+                                INFO
+                            </button>
+
+                        </div>
+
+                    </article>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ======================================================
      BEFORE / AFTER
 ====================================================== -->
 
@@ -1727,12 +1782,8 @@
 
                         <div class="result-image">
 
-                            <img src="befor.png"
-                                alt="Car paint before polish">
+                            <img src="befor2.png" alt="Car paint before polish">
 
-                            <span class="result-label">
-                                BEFORE POLISH
-                            </span>
 
                         </div>
 
@@ -1762,12 +1813,7 @@
 
                         <div class="result-image">
 
-                            <img src="after.png"
-                                alt="Car paint after polish">
-
-                            <span class="result-label">
-                                AFTER POLISH
-                            </span>
+                            <img src="after2.png" alt="Car paint after polish">
 
                         </div>
 
@@ -1828,8 +1874,7 @@
 
                     <button class="gallery-item" data-full="assets/exterior-hero.png">
 
-                        <img src="first.png"
-                            alt="Professional exterior detailing">
+                        <img src="first.png" alt="Professional exterior detailing">
 
                     </button>
 
@@ -1843,8 +1888,7 @@
 
                     <button class="gallery-item" data-full="assets/interior-after.png">
 
-                        <img src="sec.webp"
-                            alt="Clean car interior">
+                        <img src="sec.webp" alt="Clean car interior">
 
                     </button>
 
@@ -2026,8 +2070,10 @@
 
                     <div class="map-wrap">
 
-                        <iframe <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2420.526928374132!2d-7.25124739339622!3d52.650459391165796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d31006b86f45b%3A0xe2b1c7a72b80fa6b!2sExpress%20car%20detailing!5e0!3m2!1sar!2sjo!4v1790186839293!5m2!1sar!2sjo"
-                         width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                        <iframe <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2420.526928374132!2d-7.25124739339622!3d52.650459391165796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d31006b86f45b%3A0xe2b1c7a72b80fa6b!2sExpress%20car%20detailing!5e0!3m2!1sar!2sjo!4v1790186839293!5m2!1sar!2sjo"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="strict-origin-when-cross-origin"></iframe>
                         </iframe>
 
                     </div>
@@ -2154,6 +2200,16 @@
 
                             <option value="Full Valet" data-en="Full Valet" data-ga="Valet Iomlán">
                                 Full Valet
+                            </option>
+
+
+                            <option value="Silver" data-en="Silver" data-ga="Silver">
+                                Silver
+                            </option>
+
+
+                            <option value="GOLD" data-en="GOLD" data-ga="GOLD">
+                                GOLD
                             </option>
 
                         </select>
@@ -2578,34 +2634,21 @@ object-fit:contain;">
                 valet: [
                     "Full Valet",
                     "Full interior and exterior treatment , exludes roof and upholsrery"
+                ],
+
+                Silver: [
+                    "Silver",
+                    "hand wash, chamois dry, vacuum including boot, wheels and wheel arches wash, door ledges, plastic and vinyl trim cleaned and polished, windows cleaned inside and out, fresh scent, Prices may vary depending upon condition and size of a vehicle."
+                ],
+
+                GOLD: [
+                    "GOLD",
+                    "hand wash, chamois dry, vacuum including boot, wheels and wheel arches wash, door ledges, plastic and viny trim cleaned and polished, windows cleaned inside and out, fres scent, tar removal and degreasing, hand wax"
                 ]
+
 
             },
 
-
-            ga: {
-
-                additional: [
-                    "Seirbhísí Breise",
-                    "Déan teagmháil linn le sonraí d’fheithicle chun an tseirbhís bhreise cheart a phlé."
-                ],
-
-                full: [
-                    "Seirbhís Iomlán Carranna",
-                    "Déan teagmháil linn chun riachtanais agus infhaighteacht na seirbhíse iomláine a phlé."
-                ],
-
-                ceramic: [
-                    "Cosaint Cheirmeach",
-                    "Déan teagmháil linn chun cosaint cheirmeach, riocht na feithicle agus sonraí na seirbhíse a phlé."
-                ],
-
-                valet: [
-                    "Valet Iomlán",
-                    "Déan teagmháil linn le sonraí d’fheithicle chun an tseirbhís Valet Iomlán agus infhaighteacht a phlé."
-                ]
-
-            }
 
         };
 
