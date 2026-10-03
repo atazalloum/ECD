@@ -301,8 +301,16 @@
             text-transform: uppercase;
         }
 
+        .hero h1 .hero-word {
+            display: block;
+        }
+
+        .hero h1 .hero-subtitle {
+            display: block;
+        }
+
         h1 span {
-            color: var(--green2);
+            color: var(--text);
             display: block;
         }
 
@@ -1251,7 +1259,7 @@
                 padding: 100px 0;
             }
         }
-    
+
         /* PROFESSIONAL SERVICE PRICES */
         .service-price {
             margin: 10px 0 14px;
@@ -1273,8 +1281,7 @@
             font-size: 1.45rem;
             font-weight: 900;
         }
-
-</style>
+    </style>
 </head>
 
 
@@ -1335,7 +1342,8 @@
                     ☾
                 </button>
 
-                <a class="call-btn" href="tel:+353838680182" data-en="CALL NOW" data-ga="GAIR ANOIS">
+                <a class="call-btn" href="tel:+353838680182" data-en="CALL NOW" data-ga="GAIR ANOIS"
+                    aria-label="Call Express Car Detailing">
                     CALL NOW
                 </a>
 
@@ -1400,14 +1408,10 @@
                         Professional Car Detailing · Kilkenny
                     </div>
 
-
-                    <h1 data-en="More Than a Wash." data-ga="Níos Mó Ná Níochán.">
-
-                        More Than a Wash.
-
-                        <span data-en="Inside & Out." data-ga="Istigh & Amuigh.">
-                            Inside & Out.
-                        </span>
+                    <h1>
+                        <span class="hero-word" data-en="More" data-ga="Níos">More</span>
+                        <span class="hero-word" data-en="Than" data-ga="Mó">Than</span>
+                        <span class="hero-word" data-en="A Wash." data-ga="Níochán.">A Wash.</span>
 
                     </h1>
 
@@ -1526,7 +1530,7 @@
 
                         <div class="about-point">
 
-                            <span>01</span>
+                            <span>◆ </span>
 
                             <div data-en="Professional Care" data-ga="Cúram Gairmiúil">
                                 Professional Care
@@ -1537,7 +1541,7 @@
 
                         <div class="about-point">
 
-                            <span>02</span>
+                            <span>◆ </span>
 
                             <div data-en="Attention to Detail" data-ga="Aird ar Mhionsonraí">
                                 Attention to Detail
@@ -1548,7 +1552,7 @@
 
                         <div class="about-point">
 
-                            <span>03</span>
+                            <span>◆ </span>
 
                             <div data-en="Inside & Out" data-ga="Istigh & Amuigh">
                                 Inside & Out
@@ -1607,7 +1611,7 @@
 
 
 
-                    
+
 
                     <article class="service-card">
 
@@ -1627,16 +1631,17 @@
                                 <span class="price-value">40€</span>
                             </div>
 
-                            <button class="btn btn-secondary info-btn" type="button" data-service="More Details"
+                            <p class="service-description"></p>
+
+                            <button class="btn btn-secondary info-btn" type="button" data-service="bronze"
                                 data-en="MORE DETAILS" data-ga="TUILLEADH SONRAÍ">
                                 MORE DETAILS
                             </button>
-
                         </div>
 
                     </article>
 
-                    
+
                     <article class="service-card">
 
                         <img src="gold2.avif" alt="Gold Wash car detailing">
@@ -1711,8 +1716,8 @@
                                 <span class="price-value">80€</span>
                             </div>
 
-                            <button class="btn btn-secondary info-btn" type="button" data-service="GOLD" data-en="More Details"
-                                data-ga="EOLAS">
+                            <button class="btn btn-secondary info-btn" type="button" data-service="GOLD"
+                                data-en="More Details" data-ga="EOLAS">
                                 INFO
                             </button>
 
@@ -1740,8 +1745,8 @@
                                 <span class="price-value">150€</span>
                             </div>
 
-                            <button class="btn btn-secondary info-btn" type="button" data-service="valet" data-en="More Details"
-                                data-ga="EOLAS">
+                            <button class="btn btn-secondary info-btn" type="button" data-service="valet"
+                                data-en="More Details" data-ga="EOLAS">
                                 INFO
                             </button>
 
@@ -1767,7 +1772,7 @@
                                 <span class="price-value">--€</span>
                             </div>
 
-                            <button class="btn btn-secondary info-btn" type="button" data-service="More Details"
+                            <button class="btn btn-secondary info-btn" type="button" data-service="ceramic"
                                 data-en="MORE DETAILS" data-ga="TUILLEADH SONRAÍ">
                                 MORE DETAILS
                             </button>
@@ -1796,8 +1801,8 @@
                                 <span class="price-value">--€</span>
                             </div>
 
-                            <button class="btn btn-secondary info-btn" type="button" data-service="full" data-en="More Details"
-                                data-ga="EOLAS">
+                            <button class="btn btn-secondary info-btn" type="button" data-service="full"
+                                data-en="More Details" data-ga="EOLAS">
                                 INFO
                             </button>
 
