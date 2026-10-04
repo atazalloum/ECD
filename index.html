@@ -1260,6 +1260,26 @@
             }
         }
 
+        /* BOOKING ACTIONS — EMAIL + WHATSAPP */
+
+        .booking-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .booking-actions .btn {
+            width: 100%;
+        }
+
+        @media (max-width: 560px) {
+
+            .booking-actions {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
         /* PROFESSIONAL SERVICE PRICES */
         .service-price {
             margin: 10px 0 14px;
@@ -1308,7 +1328,7 @@
                 <a href="#home" data-en="Home" data-ga="Baile">
                     Home
                 </a>
-                
+
                 <a href="#about" data-en="About" data-ga="Fúinn">
                     About
                 </a>
@@ -2277,6 +2297,15 @@
                         <input class="field" id="name" type="text" placeholder="Your name" required
                             data-placeholder-en="Your name" data-placeholder-ga="D'ainm">
 
+                        <div class="field">
+                            <label for="phone" data-en="Phone Number" data-ga="Uimhir Theileafóin">
+                                Phone Number
+                            </label>
+
+                            <input type="tel" id="phone" name="phone" data-en-placeholder="e.g. +353 83 123 4567"
+                                required>
+                        </div>
+
 
                         <input class="field" id="vehicle" type="text" placeholder="Vehicle / model" required
                             data-placeholder-en="Vehicle / model" data-placeholder-ga="Feithicil / samhail">
@@ -2316,20 +2345,58 @@
                                 GOLD
                             </option>
 
+                            <option value="Bronze" data-en="Bronze" data-ga="Bronze">
+
+                                Bronze
+
+                            </option>
+
+                            <option value="Gold Wash" data-en="Gold Wash" data-ga="Gold Wash">
+
+                                Gold Wash
+
+                            </option>
+
                         </select>
+
+                        <div class="field">
+                            <label for="bookingDate" data-en="Preferred Date" data-ga="Dáta Roghnaithe">
+                                Preferred Date
+                            </label>
+
+                            <input type="date" id="bookingDate" name="bookingDate" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="bookingTime" data-en="Preferred Time" data-ga="Am Roghnaithe">
+                                Preferred Time
+                            </label>
+
+                            <input type="time" id="bookingTime" name="bookingTime" required>
+                        </div>
 
 
                         <textarea class="field" id="message" placeholder="Tell us what you need"
                             data-placeholder-en="Tell us what you need" data-placeholder-ga="Inis dúinn cad atá uait">
 </textarea>
 
+                        <div class="booking-actions">
 
-                        <button class="btn btn-primary" type="submit" data-en="SEND REQUEST ON WHATSAPP"
-                            data-ga="SEOL IARRATAS AR WHATSAPP">
+                            <button class="btn btn-primary" type="submit" data-en="SEND BY EMAIL"
+                                data-ga="SEOL TRÍ R-PHOST">
 
-                            SEND REQUEST ON WHATSAPP
+                                SEND BY EMAIL
 
-                        </button>
+                            </button>
+
+                            <button class="btn btn-secondary" type="button" id="whatsappBooking"
+                                data-en="SEND BY WHATSAPP" data-ga="SEOL TRÍ WHATSAPP">
+
+                                SEND BY WHATSAPP
+
+                            </button>
+
+                        </div>
 
                     </form>
 
@@ -2779,8 +2846,7 @@ object-fit:contain;">
                 content[0];
 
 
-            modalText.textContent =
-                content[1];
+            modalText.innerHTML = content[1].replace(/\n/g, "<br>");
 
 
             const message =
@@ -2944,82 +3010,276 @@ object-fit:contain;">
 
 
         /* =========================================================
-           WHATSAPP CONTACT FORM
-        ========================================================= */
+   BOOKING — EMAIL + WHATSAPP
+========================================================= */
 
-        document
-            .getElementById("contactForm")
-            .addEventListener(
-                "submit",
-                event => {
+        const contactForm =
+            document.getElementById("contactForm");
 
-                    event.preventDefault();
+        const whatsappBooking =
+            document.getElementById("whatsappBooking");
+
+        function getBookingData() {
+
+            return {
+
+                name:
+                    document
+                        .getElementById("name")
+                        .value
+                        .trim(),
+
+                phone:
+                    document
+                        .getElementById("phone")
+                        .value
+                        .trim(),
+
+                vehicle:
+                    document
+                        .getElementById("vehicle")
+                        .value
+                        .trim(),
+
+                service:
+                    document
+                        .getElementById("service")
+                        .value,
+
+                bookingDate:
+                    document
+                        .getElementById("bookingDate")
+                        .value,
+
+                bookingTime:
+                    document
+                        .getElementById("bookingTime")
+                        .value,
+
+                message:
+                    document
+                        .getElementById("message")
+                        .value
+                        .trim()
+            };
+        }
 
 
-                    const name =
-                        document
-                            .getElementById("name")
-                            .value
-                            .trim();
+        /* =========================
+           SEND BY EMAIL
+        ========================= */
+
+        contactForm.addEventListener(
+            "submit",
+            async event => {
+
+                event.preventDefault();
+
+                const data =
+                    getBookingData();
 
 
-                    const vehicle =
-                        document
-                            .getElementById("vehicle")
-                            .value
-                            .trim();
+                if (
+                    !data.name ||
+                    !data.vehicle ||
+                    !data.service
+                ) {
 
-
-                    const service =
-                        document
-                            .getElementById("service")
-                            .value;
-
-
-                    const message =
-                        document
-                            .getElementById("message")
-                            .value
-                            .trim();
-
-
-                    const intro =
+                    alert(
                         lang === "en"
-
-                            ? "Hello Express Car Detailing, I would like to make an enquiry."
-
-                            : "Dia duit Express Car Detailing, ba mhaith liom fiosrúchán a dhéanamh.";
-
-
-                    const text =
-                        `${intro}
-
-Name: ${name}
-Vehicle: ${vehicle}
-Service: ${service}
-Message: ${message || "-"}
-
-Kilkenny, Ireland`;
-
-
-                    window.open(
-                        "https://wa.me/353838680182?text="
-                        + encodeURIComponent(text),
-
-                        "_blank",
-
-                        "noopener"
+                            ? "Please complete your name, vehicle and service."
+                            : "Líon d'ainm, d'fheithicil agus an tseirbhís le do thoil."
                     );
 
-                }
-            );
+                    return;
 
+                }
+
+
+                const submitButton =
+                    contactForm.querySelector(
+                        'button[type="submit"]'
+                    );
+
+
+                const originalText =
+                    submitButton.textContent;
+
+
+                submitButton.disabled = true;
+
+                submitButton.textContent =
+                    lang === "en"
+                        ? "SENDING..."
+                        : "Á SHEOLADH...";
+
+
+                const formData =
+                    new FormData();
+
+
+                formData.append(
+                    "access_key",
+                    "72a20ff8-faea-43be-ae8b-0a393b348eec"
+                );
+
+
+                formData.append(
+                    "subject",
+                    "New Booking Request — Express Car Detailing"
+                );
+
+
+                formData.append(
+                    "from_name",
+                    "Express Car Detailing Website"
+                );
+
+
+                formData.append(
+                    "name",
+                    data.name
+                );
+
+
+                formData.append(
+                    "vehicle",
+                    data.vehicle
+                );
+
+
+                formData.append(
+                    "service",
+                    data.service
+                );
+
+
+                formData.append(
+                    "message",
+                    data.message || "-"
+                );
+
+
+                try {
+
+                    const response =
+                        await fetch(
+                            "https://api.web3forms.com/submit",
+                            {
+                                method: "POST",
+                                body: formData
+                            }
+                        );
+
+
+                    const result =
+                        await response.json();
+
+
+                    if (!result.success) {
+
+                        throw new Error(
+                            "Email submission failed"
+                        );
+
+                    }
+
+
+                    alert(
+                        lang === "en"
+                            ? "Booking request sent successfully. We will contact you soon."
+                            : "Seoladh an t-iarratas go rathúil. Déanfaimid teagmháil leat go luath."
+                    );
+
+
+                    contactForm.reset();
+
+
+                } catch (error) {
+
+                    alert(
+                        lang === "en"
+                            ? "Sorry, the email could not be sent. Please try WhatsApp instead."
+                            : "Níorbh fhéidir an ríomhphost a sheoladh. Bain triail as WhatsApp le do thoil."
+                    );
+
+
+                } finally {
+
+                    submitButton.disabled = false;
+
+                    submitButton.textContent =
+                        originalText;
+
+                    applyLanguage();
+
+                }
+
+            }
+        );
         document
             .getElementById("year")
             .textContent =
             new Date().getFullYear();
 
 
+        /* =========================
+SEND BY WHATSAPP
+========================= */
+
+        whatsappBooking.addEventListener(
+            "click",
+            () => {
+
+                const data =
+                    getBookingData();
+
+
+                if (
+                    !data.name ||
+                    !data.vehicle ||
+                    !data.service
+                ) {
+
+                    alert(
+                        lang === "en"
+                            ? "Please complete your name, vehicle and service."
+                            : "Líon d'ainm, d'fheithicil agus an tseirbhís le do thoil."
+                    );
+
+                    return;
+
+                }
+
+
+                const intro =
+                    lang === "en"
+                        ? "Hello Express Car Detailing, I would like to make an enquiry."
+                        : "Dia duit Express Car Detailing, ba mhaith liom fiosrúchán a dhéanamh.";
+
+
+                const whatsappText =
+                    `${intro}
+
+Name: ${data.name}
+Vehicle: ${data.vehicle}
+Service: ${data.service}
+Message: ${data.message || "-"}
+
+Kilkenny, Ireland`;
+
+
+                window.open(
+                    "https://wa.me/353838680182?text="
+                    + encodeURIComponent(
+                        whatsappText
+                    ),
+                    "_blank",
+                    "noopener"
+                );
+
+            }
+        );
         /* INITIAL LANGUAGE */
 
         applyLanguage();
