@@ -165,13 +165,34 @@
         }
 
         .booking-note {
-            color: var(--muted);
-            font-size: 12px;
-            line-height: 1.5;
-            padding: 11px 13px;
-            border-left: 3px solid var(--gold);
-            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+
+            padding: 16px 18px;
+            margin: 12px 0;
+
             background: var(--surface2);
+            border: 1px solid var(--gold);
+            border-left: 5px solid var(--gold);
+            border-radius: 12px;
+
+            color: var(--text);
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 1.7;
+
+            box-shadow: 0 4px 15px rgba(216, 173, 88, 0.12);
+        }
+
+        .booking-note-icon {
+            font-size: 30px;
+            min-width: 36px;
+            text-align: center;
+        }
+
+        .booking-note p {
+            margin: 0;
         }
 
         .nav-right {
@@ -1466,8 +1487,8 @@
                         </a>
 
 
-                        <a class="btn btn-secondary" href="#contact" data-en="BOOK BY EMAIL"
-                            data-ga="DÉAN ÁIRITHINT TRÍ R-PHOST">BOOK BY EMAIL</a>
+                        <a class="btn btn-secondary" href="#contact" data-en="BOOK NOW"
+                            data-ga="DÉAN ÁIRITHINT TRÍ R-PHOST">BOOK NOW</a>
 
                     </div>
 
@@ -2262,8 +2283,8 @@
                             </a>
 
 
-                            <a class="btn btn-secondary" href="#contact" data-en="BOOK BY EMAIL"
-                                data-ga="DÉAN ÁIRITHINT TRÍ R-PHOST">BOOK BY EMAIL</a>
+                            <a class="btn btn-secondary" href="#contact" data-en="BOOK NOW"
+                                data-ga="DÉAN ÁIRITHINT TRÍ R-PHOST">BOOK NOW</a>
 
 
                             <a class="btn btn-secondary" href="https://maps.app.goo.gl/uchZzW3t9VchpxUWA"
@@ -2415,15 +2436,17 @@
                         <textarea class="field" id="message" placeholder="Tell us what you need"
                             data-placeholder-en="Tell us what you need" data-placeholder-ga="Inis dúinn cad atá uait">
 </textarea>
-                        <p class="booking-note">
-                            The price may vary depending on the condition of the vehicle.
-                        </p>
+                        <div class="booking-note">
+                            <span class="booking-note-icon">ℹ️</span>
+                            <p>The price may vary depending on the condition of the vehicle.</p>
+                        </div>
+
                         <div class="booking-actions">
 
-                            <button class="btn btn-primary" type="submit" data-en="SEND BY EMAIL"
+                            <button class="btn btn-primary" type="submit" data-en="BOOK NOW"
                                 data-ga="SEOL TRÍ R-PHOST">
 
-                                SEND BY EMAIL
+                                BOOK NOW
 
                             </button>
                         </div>
@@ -2543,7 +2566,7 @@
 
             <a id="modalEmail" class="btn btn-primary" href="#contact">
 
-                ENQUIRE BY EMAIL
+                BOOK NOW
 
             </a>
 
@@ -2876,7 +2899,7 @@ object-fit:contain;">
 
 
             modalEmail.textContent =
-                lang === "en" ? "ENQUIRE BY EMAIL" : "DÉAN FIOSRÚCHÁN TRÍ R-PHOST";
+                lang === "en" ? "BOOK NOW" : "DÉAN FIOSRÚCHÁN TRÍ R-PHOST";
 
             modalEmail.onclick = () => {
                 const serviceSelect = document.getElementById("service");
